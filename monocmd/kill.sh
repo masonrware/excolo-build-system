@@ -3,6 +3,8 @@
 # TODO incorperate environmental variables?
 # remove aliases from bashrc and from fish config
 
+#! TODO unalias command fuck me?
+
 grep -vwF 'alias mason="python3.8 ~/Desktop/bashRC/test.py"' ~/.bashrc > ~/.bashrc
 
 grep -vwF 'alias mason="python3.8 ~/Desktop/bashRC/test.py"' ~/.config/fish/config.fish > ~/.config/fish/config.fish

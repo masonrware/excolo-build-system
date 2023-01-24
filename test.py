@@ -6,9 +6,10 @@
 
 # Written By: Mason R. Ware
 
-# This file represents a working implented program in python, albeit a barebones one. It's purpose is to test out the capabilities of the monocmd
+# This file represents a working implented program in python, albeit a 
+# barebone one. It's purpose is to test out the capabilities of the monocmd
 
-import argparser
+import monocmd.argparser as argparser
 
 # helper function to reverse a string
 def reverse(string: str) -> str:

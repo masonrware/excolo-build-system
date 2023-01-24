@@ -7,9 +7,10 @@
 # Written By: Mason R. Ware
 
 # This is an argument parser to serve as a substitute for pythons argparse.
-# It is also heavily influenced in architecture and naming convention by the aforementioned library.
-# It works to expect user-configured arguments and, based on the user's actual cli args,
-# returns an object with boolean attributes corresponding to each user-configured arg.
+# It is also heavily influenced in architecture and naming convention by the
+# aforementioned library. It works to expect user-configured arguments and, 
+# based on the user's actual cli args, returns an object with boolean 
+# attributes corresponding to each user-configured arg.
 
 from ast import List
 import sys
@@ -65,7 +66,7 @@ class ArgumentParser:
             Argument(kwarg=kwarg, help=help, param=param, description=description)
         )
 
-    # check runtime arguments (user_args) against known args and create namespace
+    # check runtime arguments (user_args) against known args (known_args) and create Namespace
     def _create_namespace(self, user_args: List):
         true_args: Set = set()
         namespace_args: List = list()
@@ -95,7 +96,6 @@ class ArgumentParser:
                 f"The following arguments are unknown/invalid: {', '.join(str(v) for v in invalid_args)}"
             )
 
-        # TODO populate Namespace object
         # add all true arguments
         for true_arg in true_args:
             true_arg.param = True
@@ -104,6 +104,7 @@ class ArgumentParser:
         # add all false arguments
         for known_arg in self.known_args:
             if known_arg not in namespace_args:
+                # kind of reduntant
                 known_arg.param = False
                 namespace_args.append(known_arg)
 
