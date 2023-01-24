@@ -20,19 +20,7 @@
 # 1. write the uninstall functionality
 #   a. run the kill script from there
 # 2. BUILD SYSTEM PROBLEM:
-#   a. this is a tricky one because ideally, the user
-#      installs the command from homebrew, etc... and 
-#      then the command will automatically be added as
-#      an alias using smth like this (?):
-#
-#~/bin
-##!/bin/bash
-#BASE="https://api.blah.com"
-#
-#sudo bash -c "curl -s $BASE/mycmd > /usr/bin/mycmd"
-#sudo chmod uga+x /usr/bin/mycmd
-#
-#   b.! look into maybe just using a makefile or a
-#      configure file with a makefile?
+#   a. put everything in a make file with targets
+#       i. have a ./config file as well
 
 
