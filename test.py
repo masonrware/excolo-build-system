@@ -10,6 +10,8 @@
 # barebone one. It's purpose is to test out the capabilities of the monocmd
 
 import monocmd.argparser as argparser
+from pprint import pprint
+
 
 # helper function to reverse a string
 def reverse(string: str) -> str:
@@ -24,6 +26,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    from pprint import pprint
-
+    if args.test:
+	    print("test found")
+     
     pprint(vars(args))

@@ -9,10 +9,9 @@
 # TODO
 
 # 1. run start script
+#   a. with the build system changes, run the alias command?
 # 2. parse yaml file
 # 3. edit main python file(s)
-#   a. maybe just use argparse instead with flags (who cares)
-#       i. maybe give the option...
 # 4. move onto other
 
 # TODO other
