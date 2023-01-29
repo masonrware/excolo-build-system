@@ -13,9 +13,11 @@
 # attributes corresponding to each user-configured arg.
 
 from ast import List
-import sys
 from typing import Set
 
+import sys
+
+from monocmd.monocmd import Configuration
 
 class Argument:
     name: str = ""
@@ -111,7 +113,13 @@ class ArgumentParser:
         # return created namespace object
         return Namespace(namespace_args)
 
-    def parse_args(self):
-        return self._create_namespace(sys.argv[1:])
-
-    ## TODO add text to test.py probably in the parser not here!!!!
+    def parse_args(self, config: Configuration = None):
+        if config:
+            ns = self._create_namespace(sys.argv[1:])
+            for attr in ns.__dict__:
+                if ns.__getattribute__(attr):
+                    #TODO once the parsed yaml file is passed in with parse_args, we will be able to 
+                    #grab its attribute based on the same name which will have the cmd as its value
+                    print(attr, ns.__getattribute__(attr))
+        else:
+            return self._create_namespace(sys.argv[1:])

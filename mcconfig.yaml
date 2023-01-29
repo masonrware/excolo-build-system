@@ -1,1 +1,9 @@
 ## This will be a dummy config file to demonstrate tests of the service
+language: python
+
+calc: python3 calculator.py
+  add: calculator.Calculator.add
+  sub: calculator.Calculator.subtract
+  mul: calculator.Calculator.multiply
+  div: calculator.Calculator.divide
+  function: calculator.function
