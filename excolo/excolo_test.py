@@ -1,0 +1,3 @@
+import excolo
+
+excolo.main()
